@@ -1,0 +1,19 @@
+Line no. 	 Token no. 		 Token 			 Lexeme
+
+      1		       0		 Identifier		 include
+      1		       1		 Identifier		   stdio
+      1		       2		 Identifier		       h
+      2		       3		 Identifier		    void
+      2		       4		 Keyword		    main
+      2		       5		 Special character       )
+      3		       6		 Special character       {
+      4		       7		 Keyword		     int
+      4		       8		 Identifier		       x
+      4		       9		 Literal		       1
+      4		      10		 Special character       ;
+      5		      11		 Identifier		  printf
+      5		      12		 Identifier		   Hello
+      5		      13		 Identifier		   World
+      5		      14		 Special character       )
+      5		      15		 Special character       ;
+      6		      16		 Special character       }
