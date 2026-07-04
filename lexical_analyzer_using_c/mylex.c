@@ -13,11 +13,72 @@ int main()
     input = fopen("input.txt", "r");
     output = fopen("output.txt", "w");
     char keyword[30][30] = {"int", "while", "if", "else", "do", "main", "include"};
+    fprintf(output, "Line no.\t Token no.\t\t Token\t\t\t Lexeme\n\n");
 
     while(!feof(input))
     {
         i=0;
         flag=0;
-        
+        ch = fgetc(input);
+
+        if(ch=='+' || ch== '-' || ch=='*' || ch=='/')
+        {
+            fprintf(output,"%7d\t\t %7d\t\t Operator\t\t %7c\n",l,t,ch);
+            t++;
+        }
+
+        else if(ch==';' || ch=='{' || ch=='}' || ch=='(' || ch==')' || ch=='?' || ch=='@' ||ch=='!' || ch=='%')
+        {
+            fprintf(output,"%7d\t\t %7d\t\t Special character %7c\n",l,t,ch);
+            t++;
+        }
+
+        else if(isdigit(ch))
+        {
+            fprintf(output,"%7d\t\t %7d\t\t Literal\t\t %7c\n",l,t,ch);
+            t++;
+        }
+
+        else if(isalpha(ch))
+        {
+            str[i]=ch;
+            i++;
+            ch=fgetc(input);
+            while(isalnum(ch) && ch!=' ')
+            {
+                str[i]=ch;
+                i++;
+                ch=fgetc(input);
+            }
+            str[i]='\0';
+
+            for(j=0; j<30; j++)
+            {
+                if(strcmp(str, keyword[j])==0)
+                {
+                    flag=1;
+                    break;
+                }
+            }
+
+            if(flag==1)
+			{
+				fprintf(output,"%7d\t\t %7d\t\t Keyword\t\t %7s\n",l,t,str);
+				t++;
+			}
+
+            else
+			{
+				fprintf(output,"%7d\t\t %7d\t\t Identifier\t\t %7s\n",l,t,str);
+				t++;
+			}
+        }
+        else if(ch=='\n')
+        {
+            l++;
+        }
     }
+    fclose(input);
+    fclose(output);
+    return 0;
 }

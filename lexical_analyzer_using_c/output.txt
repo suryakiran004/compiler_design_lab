@@ -1,6 +1,6 @@
-Line no. 	 Token no. 		 Token 			 Lexeme
+Line no.	 Token no.		 Token			 Lexeme
 
-      1		       0		 Identifier		 include
+      1		       0		 Keyword		 include
       1		       1		 Identifier		   stdio
       1		       2		 Identifier		       h
       2		       3		 Identifier		    void
@@ -16,4 +16,8 @@ Line no. 	 Token no. 		 Token 			 Lexeme
       5		      13		 Identifier		   World
       5		      14		 Special character       )
       5		      15		 Special character       ;
-      6		      16		 Special character       }
+      6		      16		 Keyword		     int
+      6		      17		 Identifier		       y
+      6		      18		 Literal		       0
+      6		      19		 Special character       ;
+      7		      20		 Special character       }
