@@ -11,8 +11,8 @@ Line no.	 Token no.		 Token			 Lexeme
       4		       8		 Identifier		       x
       4		       9		 Literal		       1
       5		      10		 Identifier		  printf
-      5		      11		 Identifier		   Hello
-      5		      12		 Identifier		   World
+      5		      11		 String literal	   Hello
+      5		      12		 String literal	   World
       5		      13		 Special character       )
       6		      14		 Keyword		     int
       6		      15		 Identifier		       y

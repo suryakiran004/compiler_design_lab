@@ -71,6 +71,34 @@ int main()
                 t++;
             }
         }
+        else if(ch == '"')
+        {
+            ch = fgetc(input);
+
+            while(ch != '"' && ch != EOF)
+            {
+                if(isalpha(ch))
+                {
+                    i = 0;
+
+                    while(isalnum(ch))
+                    {
+                        str[i++] = ch;
+                        ch = fgetc(input);
+                    }
+
+                    str[i] = '\0';
+
+                    fprintf(output,"%7d\t\t %7d\t\t String literal\t %7s\n",
+                            l,t,str);
+                    t++;
+                }
+                else
+                {
+                    ch = fgetc(input);
+                }
+            }
+        }
         else if(ch=='\n')
         {
             l++;
